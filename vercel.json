@@ -1,9 +1,22 @@
 {
+    "$schema": "https://openapi.vercel.sh/vercel.json",
     "version": 2,
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.7.2"
         }
+    },
+    "env": {
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "LOG_CHANNEL": "stderr",
+        "CACHE_STORE": "array",
+        "SESSION_DRIVER": "cookie"
     },
     "routes": [
         {
