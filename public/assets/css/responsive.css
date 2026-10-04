@@ -1,0 +1,99 @@
+
+/*TABLET DEVICE*/
+@media only screen and (max-width:768px) { 
+.navbar-brand img {margin-left:10px; }
+.navbar-default .navbar-nav > li > a {
+	margin-top: 10px;
+	padding: 8px;
+}
+.hero-text h2 {
+    font-size: 40px;
+    line-height: 40px;
+}
+.single-slide-item h2 {
+    font-size: 40px;
+    line-height: 40px;
+}
+.single_property {margin-bottom: 30px;}
+.single_testimonial { margin-bottom: 20px }
+}
+
+
+/*MOBILE 480PX DEVICE*/
+@media only screen and (max-width:480px) { 
+.navbar-default .navbar-nav > li > a { color: #313131  !important }
+.menu-top {
+background-color: #fff;
+color: #fff !important;
+margin-left: 0px;
+}
+.hero-text h2 {
+	padding-top: 200px;
+	font-size: 30px;
+	line-height: 40px;
+}
+.single-slide-item h2 {
+		padding-top: 200px;
+        font-size: 30px;
+        line-height: 40px;
+    }
+.single_team img {width: 100%;}
+.single_team {margin-bottom: 30px;}
+.single_agent_image img {
+float: none;
+margin-bottom: 20px;
+margin-right: 0;
+width: 100%;
+}
+.ml50 { margin-left: 15px }
+.actions {margin-bottom: 30px;}
+.footer_social ul { text-align: center }
+.single_footer {margin-top: 30px;} 
+.footer-area {
+    position: relative;
+    background-image: url(../img/bg/footer.png);
+    background-size: 100% 100%;
+	padding: 320px 0px 60px;
+}
+
+}
+
+
+/*IPHONE 375PX DEVICE*/
+@media only screen and (max-width:375px) { 
+.single_property_price span {margin-left: 0;}
+
+}
+
+
+/*MOBILE 360PX DEVICE*/
+@media only screen and (max-width:360px) { 
+.hero-text h2 {
+font-size: 26px;
+line-height: 34px;
+}
+.single-slide-item h2 {
+font-size: 26px;
+line-height: 34px;
+}
+.single_property_description span {margin-right: 5px;}
+.single_property_price span {margin-left: 0;}
+}
+
+
+/*MOBILE 320PX DEVICE*/
+@media only screen and (max-width:320px) { 
+.error_page h1 { font-size: 150px }
+.footer_social ul li a {
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+}
+}
+
+
+
+
+
+
