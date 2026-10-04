@@ -4,7 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 
-return Application::configure(basePath: dirname(__DIR__))
+$app = Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
@@ -24,3 +24,19 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->create();
 
+/*
+|--------------------------------------------------------------------------
+| Vercel writable runtime paths
+|--------------------------------------------------------------------------
+|
+| Vercel's deployed filesystem is read-only except for /tmp.
+| Laravel needs writable locations for runtime cache and storage.
+|
+*/
+
+if (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL'])) {
+    $app->useStoragePath('/tmp/storage');
+    $app->useBootstrapPath('/tmp/bootstrap');
+}
+
+return $app;
