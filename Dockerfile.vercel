@@ -1,0 +1,33 @@
+FROM dunglas/frankenphp:1-php8.3-bookworm
+
+RUN install-php-extensions \
+    pdo_mysql \
+    mbstring \
+    bcmath \
+    exif \
+    pcntl \
+    intl \
+    zip \
+    opcache
+
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+WORKDIR /app
+
+COPY . .
+
+RUN composer install --no-dev --optimize-autoloader --no-interaction
+
+RUN mkdir -p storage/framework/cache \
+    storage/framework/sessions \
+    storage/framework/views \
+    bootstrap/cache
+
+RUN chmod -R 775 storage bootstrap/cache
+
+ENV APP_ENV=production
+ENV APP_DEBUG=false
+
+EXPOSE 8000
+
+CMD ["frankenphp", "php-server", "--root", "public", "--listen", ":8000"]
